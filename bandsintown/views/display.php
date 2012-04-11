@@ -1,11 +1,11 @@
 <table>
 	<thead>
 		<tr>
-			<?php echo $options['display']['datetime'] ? '<th>Date</th>' : null; ?>
-			<?php echo $options['display']['on_sale_datetime'] ? '<th>On Sale Date</th>' : null; ?>
-			<?php echo $options['display']['formatted_location'] ? '<th>Where</th>' : null; ?>
-			<?php echo $options['display']['venue_name'] ? '<th>Venue</th>' : null; ?>
-			<?php if($options['display']['links']['tickets'] || $options['display']['links']['google_maps'] || $options['display']['links']['fb_event']): ?>
+			<?php echo isset($options['display']['datetime']) ? '<th>Date</th>' : null; ?>
+			<?php echo isset($options['display']['on_sale_datetime']) ? '<th>On Sale Date</th>' : null; ?>
+			<?php echo isset($options['display']['formatted_location']) ? '<th>Where</th>' : null; ?>
+			<?php echo isset($options['display']['venue_name']) ? '<th>Venue</th>' : null; ?>
+			<?php if(in_array(true, $options['display']['links'])): ?>
 				<th>Links</th>
 			<?php endif; ?>
 		</tr>
@@ -39,25 +39,25 @@
 		<?php foreach($results as $event): ?>
 			<?php if($i < $options['limit']): ?>
 			<tr>
-				<?php if($options['display']['datetime']): ?>
+				<?php if(isset($options['display']['datetime'])): ?>
 					<td><?php echo date('m/d', strtotime($event->datetime)) ?></td>
 				<?php endif; ?>
 
-				<?php if($options['display']['on_sale_datetime']): ?>
+				<?php if(isset($options['display']['on_sale_datetime'])): ?>
 					<td><?php echo date('m/d', strtotime($event->on_sale_datetime)) ?></td>
 				<?php endif; ?>
 
-				<?php if($options['display']['formatted_location']): ?>
+				<?php if(isset($options['display']['formatted_location'])): ?>
 					<td><?php echo $event->formatted_location; ?></td>
 				<?php endif; ?>
 
-				<?php if($options['display']['venue_name']): ?>
+				<?php if(isset($options['display']['venue_name'])): ?>
 					<td><?php echo $event->venue_name; ?></td>
 				<?php endif; ?>
 
-				<?php if($options['display']['links']['tickets'] || $options['display']['links']['google_maps'] || $options['display']['links']['fb_event']): ?>
+				<?php if(in_array(true, $options['display']['links'])): ?>
 					<td>
-					<?php if($options['display']['links']['tickets']): ?>
+					<?php if(isset($options['display']['links']['tickets'])): ?>
 						<?php if($event->ticket_status === 'available'): ?>
 							<a href="<?php echo $event->ticket_url; ?>" target="_blank">
 								Get Tickets
@@ -67,13 +67,13 @@
 						<?php endif; ?>
 					<?php endif; ?>
 
-					<?php if($options['display']['links']['google_maps']): ?>
+					<?php if(isset($options['display']['links']['google_maps'])): ?>
 						<a href="#" target="_blank">
 							Get Directions
 						</a>
 					<?php endif; ?>
 
-					<?php if($options['display']['links']['fb_event']): ?>
+					<?php if(isset($options['display']['links']['fb_event'])): ?>
 						<a href="#" target="_blank">
 							Facebook
 						</a>

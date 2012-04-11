@@ -53,7 +53,7 @@
 			<?php echo form_checkbox(
 				'display[datetime]',
 				true,
-				$options['display']['datetime'] ? true : false
+				isset($options['display']['datetime']) ? true : false
 			); ?>
 		</li>
 		<li class="odd">
@@ -61,7 +61,7 @@
 			<?php echo form_checkbox(
 				'display[on_sale_datetime]',
 				true,
-				$options['display']['on_sale_datetime'] ? true : false
+				isset($options['display']['on_sale_datetime']) ? true : false
 			); ?>
 		</li>
 		<li class="even">
@@ -69,7 +69,7 @@
 			<?php echo form_checkbox(
 				'display[formatted_location]',
 				true,
-				$options['display']['formatted_location'] ? true : false
+				isset($options['display']['formatted_location']) ? true : false
 			); ?>
 		</li>
 		<li class="odd">
@@ -77,7 +77,7 @@
 			<?php echo form_checkbox(
 				'display[venue_name]',
 				true,
-				$options['display']['venue_name'] ? true : false
+				isset($options['display']['venue_name']) ? true : false
 			); ?>
 		</li>
 		<li class="even">
@@ -85,7 +85,7 @@
 			<?php echo form_checkbox(
 				'display[links][tickets]',
 				true,
-				$options['display']['links']['tickets'] ? true : false
+				isset($options['display']['links']['tickets']) ? true : false
 			); ?>
 		</li>
 		<li class="odd">
@@ -93,7 +93,7 @@
 			<?php echo form_checkbox(
 				'display[links][google_maps]',
 				true,
-				$options['display']['links']['google_maps'] ? true : false
+				isset($options['display']['links']['google_maps']) ? true : false
 			); ?>
 		</li>
 		<li class="even">
@@ -101,7 +101,7 @@
 			<?php echo form_checkbox(
 				'display[links][fb_event]',
 				true,
-				$options['display']['links']['fb_event'] ? true : false
+				isset($options['display']['links']['fb_event']) ? true : false
 			); ?>
 		</li>
 	</fieldset>

@@ -52,7 +52,7 @@
 				<?php endif; ?>
 
 				<?php if(isset($options['display']['venue_name'])): ?>
-					<td><?php echo $event->venue_name; ?></td>
+					<td><?php echo $event->venue->name; ?></td>
 				<?php endif; ?>
 
 				<?php if(in_array(true, $options['display']['links'])): ?>

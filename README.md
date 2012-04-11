@@ -5,7 +5,7 @@
 * Author: Michael Giuliana
 * Twitter: @rpnzldesign
 * Website: [http://rpnzl.com/](http://rpnzl.com/)
-* Version: 1.0
+* Version: 1.0.1
 
 ## Description
 

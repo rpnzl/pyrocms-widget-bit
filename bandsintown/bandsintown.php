@@ -22,7 +22,7 @@ class Widget_Bandsintown extends Widgets
 
 	public $author		= 'Michael Giuliana';
 	public $website		= 'http://rpnzl.com';
-	public $version		= '1.0';
+	public $version		= '1.0.1';
 
 	public $fields = array(
 		array(

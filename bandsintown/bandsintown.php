@@ -53,10 +53,6 @@ class Widget_Bandsintown extends Widgets
 			'field' => 'fbid',
 			'label' => 'Artist FB Page ID',
 		),
-		array(
-			'field' => 'display',
-			'label' => 'Display',
-		),
 	);
 
 
@@ -100,7 +96,7 @@ class Widget_Bandsintown extends Widgets
 		{
 			if( ! is_array($item))
 			{
-				$item == true ? $colspan++ : null;
+				$item == true ? $colspan++ : $colspan;
 			}
 			else
 			{
@@ -109,7 +105,7 @@ class Widget_Bandsintown extends Widgets
 				 * items are true the column is displayed. All links
 				 * are displayed within the same column.
 				 */
-				in_array(true, $item) ? $colspan++ : null;
+				in_array(true, $item) ? $colspan++ : $colspan;
 			}
 		}
 

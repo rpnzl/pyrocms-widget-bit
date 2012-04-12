@@ -1,7 +1,5 @@
 # PyroCMS Bands In Town Widget
 
-* [License](http://pyrocms.com/legal/license)
-* [Forums](http://pyrocms.com/forums)
 * Author: Michael Giuliana
 * Twitter: @rpnzldesign
 * Website: [http://rpnzl.com/](http://rpnzl.com/)

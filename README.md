@@ -1,7 +1,7 @@
 # PyroCMS Bands In Town Widget
 
 * Author: Michael Giuliana
-* Twitter: @rpnzldesign
+* Twitter: [@rpnzldesign](http://www.twitter.com/rpnzl)
 * Website: [http://rpnzl.com/](http://rpnzl.com/)
 * Version: 1.0.2
 
@@ -11,4 +11,4 @@ This PyroCMS widget interacts with Bands In Town's API v2.0 and will display cus
 
 ## Installation
 
-Drop the **bandsintown** folder into your addons/shared_addons/widgets directory to make it accessible via the Admin Widgets module.
+Rename the **pyrocms-widget-bit** folder -> **bandsintown** and drop it into your addons/shared_addons/widgets directory. It should be available via the Admin Widgets module!

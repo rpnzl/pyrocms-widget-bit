@@ -27,7 +27,7 @@ Head over to the Admin Widgets module, drag the Bands In Town widget onto a widg
 
 **Limit** (*Required*) - The max number of events to display. Setting to zero (0) will display zero (0) events. Set to a higher number (100) to reveal more.
 
-**Location** (*Optional*) - City,State / City,Country / Lat,Lon / IP Address
+**Location** (*Optional*) - City,State / City,Country / IP Address
 
 **Radius** (*Optional*) - Radius in miles from your chosen location to search for shows.
 

@@ -23,8 +23,18 @@ Rename the **pyrocms-widget-bit** folder -> **bandsintown** and drop it into you
 
 Head over to the Admin Widgets module and drag the Bands In Town widget over to a widget area.
 
-**App ID** - You must choose a custom, descriptive App ID.
-**Limit** - The max number of events to display.
-**MBID** or **Artist Name** - One of these is required to make an API call since we're limited by the API to displaying a single artist's data.
-**Artist FB Page ID** - Optional, to be used in combination with the artist's name or MBID.
-**Display Options** - Alter columns in the table that will be displayed by the widget.
+**App ID** (*Required*)
+You must choose a custom, descriptive App ID.
+
+**Limit** (*Required*)
+The max number of events to display. Setting to zero (0) will display zero (0) events. Set to a higher number (100) to reveal more.
+
+**MBID** or **Artist Name** (*Required*)
+One of these is required to make an API call since we're limited by the API to displaying a single artist's data.
+
+**Artist FB Page ID** (*Optional*)
+Optional, to be used in combination with the artist's name or MBID.
+
+**Display Options**
+Alter columns in the table that will be displayed by the widget.
+

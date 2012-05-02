@@ -70,6 +70,7 @@ class Widget_Bandsintown extends Widgets
 		!empty($options['fbid']) 		OR $options['fbid'] = null;
 		//!empty($options['callback'])	OR $options['callback'] = null;
 		!empty($options['location'])	OR $options['location'] = null;
+		!empty($options['radius'])		OR $options['radius'] = null;
 		!empty($options['format']) 		OR $options['format'] = 'json';
 		!empty($options['api_version']) OR $options['api_version'] = '2.0';
 		!empty($options['display'])		OR $options['display'] = array(
@@ -126,8 +127,15 @@ class Widget_Bandsintown extends Widgets
 			$url = 'http://api.bandsintown.com/artists/';
 		}
 
-		// Set response format
-		$url = $url.'/events.'.$options['format'].'?'.'format='.$options['format'];
+		// Set response format and alter url if location is set
+		if($options['location'])
+		{
+			$url = $url.'/events/search.'.$options['format'].'?'.'format='.$options['format'];
+		}
+		else
+		{
+			$url = $url.'/events.'.$options['format'].'?'.'format='.$options['format'];
+		}
 
 		// Add options
 		$url = $options['fbid'] ? $url.'&artist_id=fbid_'.$options['fbid'] : $url;
@@ -135,6 +143,7 @@ class Widget_Bandsintown extends Widgets
 		$url = $options['app_id'] ? $url.'&app_id='.$options['app_id'] : $url;
 		//$url = $options['callback'] ? $url.'&callback='.$options['callback'] : $url;
 		$url = $options['location'] ? $url.'&location='.urlencode($options['location']) : $url;
+		$url = $options['radius'] ? $url.'&radius='.urlencode($options['radius']) : $url;
 
 		// cURL w/ PyroCache
 		if ( ! $results = $this->pyrocache->get('bandsintown'))
@@ -143,7 +152,7 @@ class Widget_Bandsintown extends Widgets
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_URL, $url);
 			$results = $options['format'] === 'json' ? json_decode(curl_exec($ch)) : curl_exec($ch);
-    		$this->pyrocache->write($results, 'bandsintown', 600);
+    		$this->pyrocache->write($results, 'bandsintown', 300);
 		}
 
 		// returns the variables to be used within the widget's view

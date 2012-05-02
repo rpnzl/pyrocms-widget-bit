@@ -19,6 +19,11 @@
 			<br>
 			<?php echo form_input('location', $options['location']); ?>
 		</li>
+		<li class="even">
+			<label for="radius">Radius In Miles (max 150)</label>
+			<br>
+			<?php echo form_input('radius', $options['radius']); ?>
+		</li>
 	</fieldset>
 
 	<fieldset>

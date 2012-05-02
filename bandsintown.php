@@ -66,7 +66,7 @@ class Widget_Bandsintown extends Widgets
 		!empty($options['artist']) 		OR $options['artist'] = null;
 		!empty($options['mbid']) 		OR $options['mbid'] = null;
 		!empty($options['fbid']) 		OR $options['fbid'] = null;
-		!empty($options['callback'])	OR $options['callback'] = null;
+		//!empty($options['callback'])	OR $options['callback'] = null;
 		!empty($options['location'])	OR $options['location'] = null;
 		!empty($options['format']) 		OR $options['format'] = 'json';
 		!empty($options['api_version']) OR $options['api_version'] = '2.0';
@@ -131,7 +131,7 @@ class Widget_Bandsintown extends Widgets
 		$url = $options['fbid'] ? $url.'&artist_id=fbid_'.$options['fbid'] : $url;
 		$url = $options['api_version'] ? $url.'&api_version='.$options['api_version'] : $url;
 		$url = $options['app_id'] ? $url.'&app_id='.$options['app_id'] : $url;
-		$url = $options['callback'] ? $url.'&callback='.$options['callback'] : $url;
+		//$url = $options['callback'] ? $url.'&callback='.$options['callback'] : $url;
 		$url = $options['location'] ? $url.'&location='.urlencode($options['location']) : $url;
 
 		// cURL

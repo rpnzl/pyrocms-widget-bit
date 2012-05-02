@@ -15,11 +15,6 @@
 			<?php echo form_input('limit', $options['limit']); ?>
 		</li>
 		<li class="odd">
-			<label for="callback">JSONP Callback</label>
-			<br>
-			<?php echo form_input('callback', $options['callback']); ?>
-		</li>
-		<li class="even">
 			<label for="location">Location</label>
 			<br>
 			<?php echo form_input('location', $options['location']); ?>

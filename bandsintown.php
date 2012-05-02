@@ -33,10 +33,12 @@ class Widget_Bandsintown extends Widgets
 			'field' => 'limit',
 			'label' => 'Limit',
 		),
+		/*
 		array(
 			'field' => 'callback',
 			'label' => 'JSONP Callback',
 		),
+		*/
 		array(
 			'field' => 'location',
 			'label' => 'Location',
@@ -134,7 +136,7 @@ class Widget_Bandsintown extends Widgets
 		//$url = $options['callback'] ? $url.'&callback='.$options['callback'] : $url;
 		$url = $options['location'] ? $url.'&location='.urlencode($options['location']) : $url;
 
-		// cURL
+		// cURL w/ PyroCache
 		if ( ! $results = $this->pyrocache->get('bandsintown'))
 		{ 
     		$ch = curl_init();

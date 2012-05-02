@@ -30,11 +30,11 @@ You must choose a custom, descriptive App ID.
 The max number of events to display. Setting to zero (0) will display zero (0) events. Set to a higher number (100) to reveal more.
 
 **MBID** or **Artist Name** (*Required*)
-One of these is required to make an API call since we're limited by the API to displaying a single artist's data.
+One of these parameters is required to make an API call since BIT limits us to a single artist.
 
 **Artist FB Page ID** (*Optional*)
 Optional, to be used in combination with the artist's name or MBID.
 
 **Display Options**
-Alter columns in the table that will be displayed by the widget.
+Alter the visibility of columns in the table that will be displayed by the widget.
 

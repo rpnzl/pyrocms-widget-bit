@@ -27,6 +27,10 @@ Head over to the Admin Widgets module, drag the Bands In Town widget onto a widg
 
 **Limit** (*Required*) - The max number of events to display. Setting to zero (0) will display zero (0) events. Set to a higher number (100) to reveal more.
 
+**Location** (*Optional*) - City, State / City, Country / Lat,Lon / IP Address
+
+**Radius** (*Optional*) - Radius in miles from your chosen location to search for shows.
+
 **MBID** or **Artist Name** (*Required*) - One of these parameters is required to make an API call since BIT limits us to a single artist.
 
 **Artist FB Page ID** (*Optional*) - Optional, to be used in combination with the artist's name or MBID.

@@ -22,7 +22,7 @@ class Widget_Bandsintown extends Widgets
 
 	public $author		= 'Michael Giuliana';
 	public $website		= 'http://rpnzl.com';
-	public $version		= '1.0.2';
+	public $version		= '1.1';
 
 	public $fields = array(
 		array(
@@ -135,10 +135,14 @@ class Widget_Bandsintown extends Widgets
 		$url = $options['location'] ? $url.'&location='.urlencode($options['location']) : $url;
 
 		// cURL
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_URL, $url);
-		$results = $options['format'] === 'json' ? json_decode(curl_exec($ch)) : curl_exec($ch);
+		if ( ! $results = $this->pyrocache->get('bandsintown'))
+		{ 
+    		$ch = curl_init();
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_URL, $url);
+			$results = $options['format'] === 'json' ? json_decode(curl_exec($ch)) : curl_exec($ch);
+    		$this->pyrocache->write($results, 'bandsintown', 600);
+		}
 
 		// returns the variables to be used within the widget's view
 		return array(
